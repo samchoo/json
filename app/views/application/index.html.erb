@@ -49,9 +49,17 @@
 
 <div class="span9">
           <div class="hero-unit">
-<%=
-@result[120]
-%>
+
+<%
+@result[0].each do |a , b|%>
+		
+		<%= a %>
+		 <% str=b.to_s.split(',').each do |test|  %>
+		  <%= test %>
+		  <br />
+		  <% end %>
+		 <br/>
+<% end %>
 
 
     </div><!--/hero-unit-->
