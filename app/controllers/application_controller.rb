@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
     url = "http://data.austintexas.gov/resource/ecmv-9xxi.json?" + "$offset=1001"
 
 @result = JSON.parse(open(url).read)
+#@result = @result[0]
   end
   
 end
