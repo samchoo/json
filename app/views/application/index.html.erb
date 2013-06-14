@@ -49,17 +49,73 @@
 
 <div class="span9">
           <div class="hero-unit">
-
-<%
-@result[0].each do |a , b|%>
-		
-		<%= a %>
-		 <% str=b.to_s.split(',').each do |test|  %>
-		  <%= test %>
-		  <br />
-		  <% end %>
-		 <br/>
-<% end %>
+ <% @result.each do |single| %> 
+	<% single.each  do |a , b|%>
+			
+		  
+			 
+			 
+			 	<% if a== "inspection_date"%>
+			 		<!--store b in inspection model-->
+			 		
+			 		<% end %>
+			 	<% if a== "zip_code"%>
+			 		<!--store b in zip model-->
+			 		<%= b %>
+			 		<% end %>
+			 	<% if a== "address"%>
+			 		<!--break b into parts -->
+			 			<% b.each do |key, val|  %>
+			 			<br />
+			 				key: <%= key %>
+			 				<% if key =="needs_recoding" %>
+			 					 
+			 					<%end%>
+			 				<% if key =="longitude" %>
+			 					 <%= val %>
+			 					<%end%>		
+			 					
+			 				<% if key == "latitude"%>	 
+			 					
+			 				<% end %>
+			 				
+			 				<% if key =="human_address" %>
+			 				
+			 				<br />
+			 				 	<% address_split=val.split(',')%>
+			 					<%  address_split.each do |values| %>
+			 						  
+			 						  
+			 						 	<%= values%>
+			 						 	<br />
+			 						 	 
+			 						 <%end%> 
+			 					 
+			 					<%end%>
+			 									
+			 				<br />
+			 				 
+			 				<br />
+			 			  <% end %>
+			 		<% end %>
+			 	<% if a== "score"%>
+			 		<!--store b in score model-->
+			 		
+			 		<% end %>
+			 				 	
+			 		<% if a== "restaurant_name"%>
+			 		
+			 		
+			 		<%end%>		 	
+			 	 
+			  
+			  
+			  	 
+			  <br/>
+			
+			 <br/>
+		<% end %>
+ 	<% end %>  
 
 
     </div><!--/hero-unit-->
