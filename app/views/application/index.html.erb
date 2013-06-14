@@ -85,10 +85,22 @@
 			 				 	<% address_split=val.split(',')%>
 			 					<%  address_split.each do |values| %>
 			 						  
-			 						  
-			 						 	<%= values%>
-			 						 	<br />
-			 						 	 
+			 						  <% address_core=values.split(":") %>
+
+			 						 		<br />
+			 						 		
+			 						 		<% if address_core[0]== '{"address"'%>	
+			 						 			<%= address_core[1]%>
+			 						 		 <%end%>  
+			 						 		<% if address_core[0]== '"city"'%>	
+			 						 			<%= address_core[1]%>
+			 						 		 <%end%>  
+			 						 		<% if address_core[0]== '"state"'%>	
+			 						 			<%= address_core[1]%>
+			 						 		 <%end%> 		 
+			 						 		 
+			 						 		 
+			 						 	 	 
 			 						 <%end%> 
 			 					 
 			 					<%end%>
