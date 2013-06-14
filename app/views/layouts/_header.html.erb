@@ -1,0 +1,44 @@
+<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+            $("body").css("display", "none");
+            $("body").fadeIn(2000);
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container-fluid">  <!-- was previously container without fluid-->
+      <%= link_to "Sam's UI Test App", '#', id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home",    '#' %></li>
+          <li><%= link_to "Help",    '#' %></li>
+          <li><%= link_to "Sign in", '#' %></li>
+          
+          <li>
+          <form class="navbar-search pull-left">
+    	  <input type="text" class="search-query" placeholder="Search">
+          </form>
+    	  </li>
+    	  
+    	  
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
