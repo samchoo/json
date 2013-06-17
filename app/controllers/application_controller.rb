@@ -6,11 +6,14 @@ class ApplicationController < ActionController::Base
     require 'json'
     url = "http://data.austintexas.gov/resource/ecmv-9xxi.json?" + "$offset=1001"
     result = JSON.parse(open(url).read) 
+ 
+  
+
     result.each do |single|
     restaurant=Restaurant.new
       single.each  do |a , b|
         if a == "inspection_date"
-          restaurant.inspection_date = b
+          restaurant.inspection_date = Time.at(b.to_i).to_s
         end
         if  a == "zip_code"
           restaurant.zip = b
@@ -58,8 +61,9 @@ class ApplicationController < ActionController::Base
           end
         restaurant.save   
          end
-        
+   
        end
+
   end 
  
  
