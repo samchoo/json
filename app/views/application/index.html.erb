@@ -49,64 +49,9 @@
 
 <div class="span9">
           <div class="hero-unit">
- <% @result.each do |single| %> 
-	<% single.each  do |a , b|%>
-			 	<% if a== "inspection_date"%>
-			 		<!--store b in inspection model-->
-			 		<br/>
-			 		<%=b%>
-			 		<% end %>
-			 	<% if a== "zip_code"%>
-			 		<!--store b in zip model-->
-			 		<br/>
-			 		<%=b%>
-			 		<% end %>
-			 	<% if a== "address"%>
-			 		<!--break b into parts -->
-			 			<% b.each do |key, val|  %>
-			 			
-			 				<% if key =="needs_recoding" %>
-			 				<br />
-			 					<%end%>
-			 				<% if key =="longitude" %>
-			 					 <%= val %>
-			 					 <br />
-			 					<%end%>		
-			 				<% if key == "latitude"%>	 
-			 					<%= val %>
-			 					<br />
-			 				<% end %>
-			 				<% if key =="human_address" %>
-			 				 	<% address_split=val.split(',')%>
-			 					<%  address_split.each do |values| %>
-			 						  <% address_core=values.split(":") %>
-			 						 		<% if address_core[0]== '{"address"'%>	
-			 						 			<%= address_core[1].to_s.delete('"')%>
-			 						 			<br />
-			 						 		 <%end%>  
-			 						 		<% if address_core[0]== '"city"'%>	
-			 						 			<%= address_core[1].to_s.delete('"')%>
-			 						 			<br />
-			 						 		 <%end%>  
-			 						 		<% if address_core[0]== '"state"'%>	
-			 						 			<%= address_core[1].to_s.delete('"')%>
-			 						 			<br />
-			 						 		 <%end%> 		 
-			 						 <%end%> 
-			 					<%end%>
-			 			  <% end %>
-			 		<% end %>
-			 	<% if a== "score"%>
-			 		<!--store b in score model-->
-			 		<%=b%>
-			 		<% end %>
-			 		<% if a== "restaurant_name"%>
-			 		<br/>
-			 		<%=b%>
-			 		<br/>
-			 		<%end%>		 	
-		<% end %>
- 	<% end %>  
+ 
+		<% res = Restaurant.all%>
+ 	<%= res %>  
 
 
     </div><!--/hero-unit-->
