@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
     result.each do |single|
     restaurant=Restaurant.new
-      single.each  do |a , b|
+      single.find_each do |a , b|
         if a == "inspection_date"
           restaurant.inspection_date = Time.at(b.to_i)
         end
@@ -40,18 +40,18 @@ class ApplicationController < ActionController::Base
           if key =="human_address"
              address_split=val.split(',')
  
-                address_split.each do |values| 
-                    address_core = values.split(":") 
-                    if address_core[0] == '{"address"'
-                        restaurant.human_address= address_core[1].to_s.delete('"')
+                address_split.find_each do |address_val| 
+                    address_total = address_val.split(":") 
+                    if address_total[0] == '{"address"'
+                        restaurant.human_address= address_total[1].to_s.delete('"')
                        
                        end
-                    if address_core[0] == '"city"' 
-                        restaurant.city = address_core[1].to_s.delete('"')
+                    if address_total[0] == '"city"' 
+                        restaurant.city = address_total[1].to_s.delete('"')
                          
                        end 
-                      if address_core[0] == '"state"' 
-                        restaurant.state = address_core[1].to_s.delete('"') 
+                      if address_total[0] == '"state"' 
+                        restaurant.state = address_total[1].to_s.delete('"') 
                          
                       end  #end if
                     end 
