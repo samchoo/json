@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     restaurant=Restaurant.new
       single.each  do |a , b|
         if a == "inspection_date"
-          restaurant.inspection_date = Time.at(b.to_i).to_s
+          restaurant.inspection_date = Time.at(b.to_i)
         end
         if  a == "zip_code"
           restaurant.zip = b
