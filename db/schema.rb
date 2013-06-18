@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618142845) do
+ActiveRecord::Schema.define(:version => 20130618144504) do
 
   create_table "crimes", :force => true do |t|
     t.float    "latitude"
@@ -42,17 +42,17 @@ ActiveRecord::Schema.define(:version => 20130618142845) do
     t.string   "gunsign"
     t.float    "distance"
     t.boolean  "permitvalid"
-    t.boolean  "hasvalid"
     t.string   "name"
     t.string   "city"
     t.string   "state"
     t.boolean  "recoding"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "ids"
     t.string   "type"
+    t.boolean  "hasviolation"
   end
 
 end

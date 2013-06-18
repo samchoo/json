@@ -1,5 +1,6 @@
 UserInterface::Application.routes.draw do
-  root :to => 'application#index'
+  root :to => 'application#home'
+  match '/index',  to: 'application#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

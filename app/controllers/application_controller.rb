@@ -63,6 +63,9 @@ class ApplicationController < ActionController::Base
          end
    
        end
+       def home
+         
+       end
 
   end 
  
