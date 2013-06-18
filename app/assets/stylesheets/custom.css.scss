@@ -88,3 +88,86 @@ p {
    -moz-border-radius: 20px;
    border-radius: 20px;
 }
+
+.calendar {
+  
+  border-collapse: collapse;
+  width: 300%;
+td,
+th {
+  font-family: "Lucida Grande",arial,helvetica,sans-serif;
+  font-size: 10px;
+  padding: 6px;
+  border: 1px solid #999;
+}
+
+th {
+  background: #CDD;
+  font-size: 20px;
+  color: #666;
+  text-align: center;
+  width: 14.2857142857143%;
+}
+
+td {
+  background: #FFF;
+  color: #777;
+  height: 120px;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+#holiday{}
+
+.notmonth {
+  color: #CCC;
+}
+
+#month {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+#month a, #month a:hover {
+  text-decoration: none;
+  padding: 0 10px;
+  color: #999;
+}
+
+.today {
+  background-color: #C7F2FF;
+}
+
+ul {
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  text-align: left;
+}
+}
+
+.time{
+  input, textarea, select, .uneditable-input {
+  width: 30%;
+  height: 40px;
+  }
+}
+
+.event_index{
+    background-color: #C7F2FF;
+    padding: 0px;
+    border-top: 1px solid $black;
+      font-size: 40px;
+      text-align: center;
+      letter-spacing: -1px;
+      margin-bottom: -10px;
+      margin-top: 5px;
+}

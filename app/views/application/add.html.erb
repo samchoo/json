@@ -1,0 +1,30 @@
+<b> add resturant</b>
+	<%= form_for @restaurant do |f| %>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+		
+		<%= f.label :inspection_date, "Inspection Date" %>
+		<%= f.date_select :inspection_date %>
+		<%= f.label :human_address, "Address " %>
+		<%= f.text_field :human_address %>
+		<%= f.label :zip, "zip code" %>
+		<%= f.text_field :zip %>
+		<%= f.label :score, "Score" %>
+		<%= f.text_field :score %>
+		<%= f.label :city %>
+		<%= f.text_field :city %>
+		<%= f.label :state %>
+		<%= f.text_field :state %>
+		
+		<%= f.label :longitude %>
+		<%= f.text_field :longitude %>
+		<%= f.label :latitude %>
+		<%= f.text_field :latitude %> 	
+		
+		<p></p> <%= f.check_box :recoding  %> 
+		
+		   <p></p> <%= f.submit "Add resturant", class: "btn btn-large btn-primary" %>
+	
+	<% end %>
+	
+	

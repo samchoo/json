@@ -1,6 +1,9 @@
 UserInterface::Application.routes.draw do
   root :to => 'application#home'
+  resources :restaurants
   match '/index',  to: 'application#index'
+  match '/addrestaurant' , to: 'application#add'
+  match '/allrestaurant' , to: 'application#all'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
