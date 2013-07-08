@@ -71,13 +71,13 @@ class ApplicationController < ActionController::Base
          @restaurant=Restaurant.new
          currentaddress=  params[:human_address]
          currentdate= params[:inspection_date]
-         @olddate= Restaurant.find_by_human_address_and_inspection_date(params[:human_address],params[:inspection_date])
+         @olddate= Restaurant.where("human_address = ? AND inspection_date = ?",params[:human_address],params[:inspection_date])
          if @olddate == nil
            
-            redirect_to '/allrestaurant'
+             
          else 
            @restaurant.save
-           redirect_to '/allrestaurant'
+            
          end
           
          
